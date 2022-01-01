@@ -11,6 +11,7 @@ This Magento 2 plugin adds blogging functionality to your Store.
 
 - Creating, Deleting, Updating of blogs.
 - Supports the Magento Pag Builder.
+- Toggle to put link in menu or footer-menu.
 
 ## installation
 
