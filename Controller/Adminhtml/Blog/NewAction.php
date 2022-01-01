@@ -1,31 +1,33 @@
 <?php
-/**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
- */
 namespace SebTech\Blog\Controller\Adminhtml\Blog;
 
+use Magento\Backend\App\Action\Context;
+use Magento\Backend\Model\View\Result\ForwardFactory;
 use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\Controller\Result\Forward;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\Registry;
+use SebTech\Blog\Controller\Adminhtml\Blog;
 
 /**
  * Create CMS block action.
  */
-class NewAction extends \SebTech\Blog\Controller\Adminhtml\Blog implements HttpGetActionInterface
+class NewAction extends Blog implements HttpGetActionInterface
 {
     /**
-     * @var \Magento\Backend\Model\View\Result\ForwardFactory
+     * @var ForwardFactory
      */
-    protected $resultForwardFactory;
+    protected ForwardFactory $resultForwardFactory;
 
     /**
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\Registry $coreRegistry
-     * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+     * @param Context $context
+     * @param Registry $coreRegistry
+     * @param ForwardFactory $resultForwardFactory
      */
     public function __construct(
-        \Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\Registry $coreRegistry,
-        \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
+        Context $context,
+        Registry $coreRegistry,
+        ForwardFactory $resultForwardFactory
     ) {
         $this->resultForwardFactory = $resultForwardFactory;
         parent::__construct($context, $coreRegistry);
@@ -34,11 +36,10 @@ class NewAction extends \SebTech\Blog\Controller\Adminhtml\Blog implements HttpG
     /**
      * Create new CMS block
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return ResultInterface
      */
-    public function execute()
+    public function execute(): ResultInterface
     {
-        /** @var \Magento\Framework\Controller\Result\Forward $resultForward */
         $resultForward = $this->resultForwardFactory->create();
         return $resultForward->forward('edit');
     }

@@ -2,13 +2,15 @@
 
 namespace SebTech\Blog\Controller\Adminhtml\Blog;
 
+use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
+use Magento\Backend\Model\View\Result\Page;
 use Magento\Framework\App\Action\HttpGetActionInterface;
 use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\Request\DataPersistorInterface;
 use Magento\Framework\View\Result\PageFactory;
 
-class Create extends \Magento\Backend\App\Action implements HttpGetActionInterface
+class Create extends Action implements HttpGetActionInterface
 {
     /**
      * Authorization level of a basic admin session
@@ -20,17 +22,17 @@ class Create extends \Magento\Backend\App\Action implements HttpGetActionInterfa
     /**
      * @var PageFactory
      */
-    protected $resultPageFactory;
+    protected PageFactory $resultPageFactory;
 
     /**
      * @var DataPersistorInterface
      */
-    private $dataPersistor;
+    private DataPersistorInterface $dataPersistor;
 
     /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
-     * @param DataPersistorInterface $dataPersistor
+     * @param DataPersistorInterface|null $dataPersistor
      */
     public function __construct(
         Context $context,
@@ -45,11 +47,11 @@ class Create extends \Magento\Backend\App\Action implements HttpGetActionInterfa
     /**
      * Index action
      *
-     * @return \Magento\Backend\Model\View\Result\Page
+     * @return Page
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        /** @var Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
         $resultPage->setActiveMenu('SebTech_Blog::create');
         $resultPage->addBreadcrumb(__('Create New Blog'), __('Blog'));

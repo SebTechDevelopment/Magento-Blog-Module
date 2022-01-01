@@ -4,12 +4,10 @@ namespace SebTech\Blog\Controller\Adminhtml\Blog;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\Model\View\Result\Redirect;
-use Magento\Backend\Model\View\Result\RedirectFactory;
 use Magento\Framework\Controller\ResultInterface;
 use SebTech\Blog\Model\BlogPost;
 use SebTech\Blog\Model\BlogPostFactory;
 use Magento\Framework\App\Action\HttpPostActionInterface;
-use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Backend\App\Action\Context;
 use SebTech\Blog\Model\BlogPostRepository;
@@ -53,9 +51,7 @@ class Save extends Action implements HttpPostActionInterface
                     return $resultRedirect->setPath('*/*/');
                 }
             }
-
             $model->setData($data);
-
             try {
                 $this->blogPostRepository->save($model);
                 $this->messageManager->addSuccessMessage(__('You saved the blog post.'));
