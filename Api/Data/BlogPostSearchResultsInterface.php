@@ -11,7 +11,7 @@ interface BlogPostSearchResultsInterface extends SearchResultsInterface
      *
      * @return \SebTech\Blog\Api\Data\BlogPostInterface[]
      */
-    public function getItems();
+    public function getItems(): array;
 
     /**
      * Set details list.
@@ -19,5 +19,5 @@ interface BlogPostSearchResultsInterface extends SearchResultsInterface
      * @param [] $items
      * @return $this
      */
-    public function setItems(array $items);
+    public function setItems(array $items): BlogPostSearchResultsInterface;
 }
