@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="SebTech_Blog::blog"            title="Blog"                module="SebTech_Blog" sortOrder="51"                                                                                resource="SebTech_Blog::blog"/>
+        <add id="SebTech_Blog::manage"          title="Manage Blog Posts"   module="SebTech_Blog" sortOrder="10" parent="SebTech_Blog::blog" action="blog/blog"                                 resource="SebTech_Blog::blog"/>
+        <add id="SebTech_Blog::create"          title="Create New Blog"     module="SebTech_Blog" sortOrder="99" parent="SebTech_Blog::blog" action="blog/blog/create"                           resource="SebTech_Blog::blog"/>
+        <add id="SebTech_Blog::configuration"   title="Configuration"       module="SebTech_Blog" sortOrder="99" parent="SebTech_Blog::blog" action="adminhtml/system_config/edit/section/blog" resource="SebTech_Blog::blog"/>
+    </menu>
+</config>

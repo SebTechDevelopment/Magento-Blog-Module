@@ -1,0 +1,14 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $view \SebTech\Blog\ViewModel\BlogPostsIndex */
+$view = $block->getData('blogPostsIndex');
+?>
+
+<?php
+/** @var \SebTech\Blog\Model\BlogPost $blog */
+foreach ($view->getAllBlogs() as $blog) { ?>
+    <h1><?= $blog->getTitle() ?></h1>
+    <p><?= $blog->getContent() ?></p>
+    <small><?= $blog->getAuthor() ?> - <?= $blog->getCreatedAt()->format("Y-m-d") ?></small>
+    <hr>
+<?php } ?>

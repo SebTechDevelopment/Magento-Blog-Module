@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="sebtech_blog_post">
+        <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
+        <column xsi:type="varchar"  length="255" name="title"  nullable="false" comment="Blog title"/>
+        <column xsi:type="varchar"  length="255" name="author" nullable="false" comment="Blog author"/>
+        <column xsi:type="datetime" name="created_at"  nullable="false" comment="Created at"/>
+        <column xsi:type="text" name="content" nullable="false" comment="Blog content"/>
+
+        <constraint xsi:type="primary"  referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>

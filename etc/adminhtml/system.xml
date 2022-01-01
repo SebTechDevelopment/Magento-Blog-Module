@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="sebtech" sortOrder="2000">
+            <label>SebTech</label>
+        </tab>
+        <section id="blog" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Blog</label>
+            <tab>sebtech</tab>
+            <resource>SebTech_Blog::settings</resource>
+            <group id="settings" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Blog Settings</label>
+                <field id="enabled" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Render Blogs</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="link_in_footer" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Add Link In Footer Menu</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

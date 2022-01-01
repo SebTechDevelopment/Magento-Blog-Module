@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">sebtech_blog_blogpost_listing.sebtech_blog_blogpost_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <deps>
+            <dep>sebtech_blog_blogpost_listing.sebtech_blog_blogpost_listing_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="add">
+                <url path="*/*/create"/>
+                <class>primary</class>
+                <label translate="true">Add New Blog</label>
+            </button>
+        </buttons>
+        <spinner>sebtech_blog_blogpost_columns</spinner>
+    </settings>
+    <dataSource name="sebtech_blog_blogpost_listing_data_source" component="Magento_Ui/js/grid/provider">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>sebtech_blog::blog</aclResource>
+        <dataProvider name="sebtech_blog_blogpost_listing_data_source" class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <columns name="sebtech_blog_blogpost_columns">
+        <column name="id">
+            <settings>
+                <label translate="true">ID</label>
+            </settings>
+        </column>
+        <column name="title">
+            <settings>
+                <label translate="true">Title</label>
+            </settings>
+        </column>
+        <column name="author">
+            <settings>
+                <label translate="true">Author</label>
+            </settings>
+        </column>
+        <column name="content">
+            <settings>
+                <label translate="true">Content</label>
+            </settings>
+        </column>
+        <column name="created_at">
+            <settings>
+                <label translate="true">Created At</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" class="SebTech\Blog\Ui\Component\Listing\Column\Actions"/>
+    </columns>
+</listing>
