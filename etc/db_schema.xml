@@ -7,6 +7,7 @@
         <column xsi:type="varchar"  length="255" name="author" nullable="false" comment="Blog author"/>
         <column xsi:type="datetime" name="created_at"  nullable="false" comment="Created at"/>
         <column xsi:type="text" name="content" nullable="false" comment="Blog content"/>
+        <column xsi:type="boolean" name="enabled"  comment="Is Blog Enabled"/>
 
         <constraint xsi:type="primary"  referenceId="PRIMARY">
             <column name="id"/>

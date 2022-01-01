@@ -21,4 +21,9 @@ interface BlogPostInterface
     public function getCreatedAt(): \DateTime;
 
     public function setCreatedAt(\DateTime $dateTime): void;
+
+    public function setEnabled(bool $enabled): void;
+
+    public function getEnabled(): bool;
+
 }
