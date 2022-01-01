@@ -12,9 +12,9 @@ This Magento 2 plugin adds blogging functionality to your Store.
 - Creating, Deleting, Updating of blogs.
 - Individual blogs can be enabled/disabled.
 - Supports the Magento Page Builder.
-- Toggle to put link in menu or footer-menu.
+- Toggle to put link in menu and/or footer-menu.
 
-## installation
+## Installation
 
 - No composer support at the moment.
     - Git clone this project inside you app/code folder under SebTech/Blog
