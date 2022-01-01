@@ -3,36 +3,45 @@
 namespace SebTech\Blog\ViewModel;
 
 use Magento\Framework\View\Element\Block\ArgumentInterface;
-use SebTech\Blog\Model\BlogPost;
-use SebTech\Blog\Model\BlogPostRepository;
 use SebTech\Blog\Model\ResourceModel\BlogPost\Collection as BlogPostCollection;
 
 class BlogPostsIndex implements ArgumentInterface
 {
-    private BlogPostRepository $blogPostRepository;
+    /**
+     * @var BlogPostCollection
+     */
     private BlogPostCollection $blogPostCollection;
 
-    public function __construct(BlogPostRepository $blogPostRepository, BlogPostCollection $blogPostCollection)
+    /**
+     * @param BlogPostCollection $blogPostCollection
+     */
+    public function __construct(BlogPostCollection $blogPostCollection)
     {
-        $this->blogPostRepository = $blogPostRepository;
         $this->blogPostCollection = $blogPostCollection;
     }
 
+    /**
+     * @return string
+     */
     public function sayHello(): string
     {
         return "Hello from ViewModel :-)";
     }
 
+    /**
+     * @return int
+     */
     public function amountOfBlogsAvailable(): int
     {
         return $this->blogPostCollection->count();
     }
 
+    /**
+     * @return array
+     */
     public function getAllBlogs(): array
     {
-        $blogs = $this->blogPostCollection->getItems();
-
-        return $blogs;
+        return $this->blogPostCollection->getItems();
     }
 
 }
