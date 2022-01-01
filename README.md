@@ -18,8 +18,7 @@ This Magento 2 plugin adds blogging functionality to your Store.
     - Git clone this project inside you app/code folder under SebTech/Blog
 
 # How to use
-
-## See the backend admin:  
+See the backend admin:
 
 ![img.png](img.png)  
 
