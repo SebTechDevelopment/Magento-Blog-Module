@@ -14,4 +14,10 @@
             </argument>
         </arguments>
     </type>
+
+    <type name="Magento\Theme\Block\Html\Topmenu">
+        <plugin name="blog_menu_item" type="SebTech\Blog\Plugin\Block\Html\Topmenu"
+                disabled="false"/>
+    </type>
+
 </config>

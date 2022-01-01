@@ -24,6 +24,11 @@ class Config
 
     public function shouldBlogsRender(): bool
     {
-        return $this->scopeConfig->getValue('blog/settings/enabled');
+        return $this->scopeConfig->isSetFlag('blog/settings/enabled');
+    }
+
+    public function shouldLinkBeInMenu(): bool
+    {
+        return $this->scopeConfig->isSetFlag('blog/settings/link_in_menu');
     }
 }
