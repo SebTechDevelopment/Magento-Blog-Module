@@ -7,6 +7,9 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 
 class Config
 {
+    const BLOG_SETTINGS_ENABLED = 'blog/settings/enabled';
+    const BLOG_SETTINGS_LINK_IN_MENU = 'blog/settings/link_in_menu';
+
     private ScopeConfigInterface $scopeConfig;
 
     /**
@@ -24,11 +27,11 @@ class Config
 
     public function shouldBlogsRender(): bool
     {
-        return $this->scopeConfig->isSetFlag('blog/settings/enabled');
+        return $this->scopeConfig->isSetFlag(self::BLOG_SETTINGS_ENABLED);
     }
 
     public function shouldLinkBeInMenu(): bool
     {
-        return $this->scopeConfig->isSetFlag('blog/settings/link_in_menu');
+        return $this->scopeConfig->isSetFlag(self::BLOG_SETTINGS_LINK_IN_MENU);
     }
 }
