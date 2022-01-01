@@ -2,6 +2,8 @@
 
 namespace SebTech\Blog\Model;
 
+use DateTime;
+use Exception;
 use Magento\Framework\DataObject\IdentityInterface;
 use Magento\Framework\Model\AbstractModel;
 use SebTech\Blog\Api\Data\BlogPostInterface;
@@ -10,11 +12,17 @@ class BlogPost  extends AbstractModel implements BlogPostInterface, IdentityInte
 {
     const CACHE_TAG = 'blogpost_d';
 
+    /**
+     * @return void
+     */
     protected function _construct()
     {
         $this->_init(\SebTech\Blog\Model\ResourceModel\BlogPost::class);
     }
 
+    /**
+     * @return string[]
+     */
     public function getIdentities()
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
@@ -64,7 +72,7 @@ class BlogPost  extends AbstractModel implements BlogPostInterface, IdentityInte
 
     /**
      * @param string $content
-     * @return string
+     * @return void
      */
     public function setContent(string $content): void
     {
@@ -72,18 +80,19 @@ class BlogPost  extends AbstractModel implements BlogPostInterface, IdentityInte
     }
 
     /**
-     * @return \DateTime
+     * @return DateTime
+     * @throws Exception
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt(): DateTime
     {
-        return new \DateTime($this->getData('created_at'));
+        return new DateTime($this->getData('created_at'));
     }
 
     /**
-     * @param \DateTime $dateTime
+     * @param DateTime $dateTime
      * @return void
      */
-    public function setCreatedAt(\DateTime $dateTime): void
+    public function setCreatedAt(DateTime $dateTime): void
     {
         $this->setData('created_at', $dateTime);
     }
