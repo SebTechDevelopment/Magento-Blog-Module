@@ -39,7 +39,7 @@ abstract class Blog extends Action
      * @param Page $resultPage
      * @return Page
      */
-    protected function initPage($resultPage): Page
+    protected function initPage(Page $resultPage): Page
     {
         $resultPage->setActiveMenu('SebTech_Blog::blog')
             ->addBreadcrumb(__('Blog'), __('Blog'))
