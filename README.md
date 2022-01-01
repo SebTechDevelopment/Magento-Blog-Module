@@ -29,5 +29,7 @@ See the backend admin:
     > Set this value to Yes to render all the available blogs the frontend and make the route available.
 - Add Link In Footer
     > Set this value to yes if you want to put a link to the blogs inside your website footer.
+- Add Link In Menu
+  > Set this value to yes if you want to put a link to the blogs in the main menu.
 
 
