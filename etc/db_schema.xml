@@ -5,9 +5,12 @@
         <column xsi:type="int" name="id" padding="11" unsigned="false" nullable="false" identity="true" comment="Value ID"/>
         <column xsi:type="varchar"  length="255" name="title"  nullable="false" comment="Blog title"/>
         <column xsi:type="varchar"  length="255" name="author" nullable="false" comment="Blog author"/>
-        <column xsi:type="datetime" name="created_at"  nullable="false" comment="Created at"/>
         <column xsi:type="text" name="content" nullable="false" comment="Blog content"/>
         <column xsi:type="boolean" name="enabled"  comment="Is Blog Enabled"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Blog Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Blog Modification Time"/>
 
         <constraint xsi:type="primary"  referenceId="PRIMARY">
             <column name="id"/>

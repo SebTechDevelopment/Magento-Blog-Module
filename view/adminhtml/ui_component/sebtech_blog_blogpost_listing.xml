@@ -67,6 +67,11 @@
                 <label translate="true">Created At</label>
             </settings>
         </column>
+        <column name="updated_at">
+            <settings>
+                <label translate="true">Updated At</label>
+            </settings>
+        </column>
         <actionsColumn name="actions" class="SebTech\Blog\Ui\Component\Listing\Column\Actions"/>
     </columns>
 </listing>
