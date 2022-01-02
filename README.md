@@ -35,7 +35,7 @@ See the backend admin:
 
 
 ## Screenshots
-
-![](Readme/Page Builder.png)  
-![](Readme/Page Builder 2.png)  
-![](Readme/img_1.png)  
+  
+![](Readme/Page-Builder.png)   
+![](Readme/Page-Builder-2.png)   
+![](Readme/img_1.png)    
