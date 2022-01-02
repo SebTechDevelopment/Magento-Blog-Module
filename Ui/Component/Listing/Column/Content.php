@@ -6,8 +6,8 @@ use Magento\Framework\View\Element\UiComponent\ContextInterface;
 use Magento\Framework\View\Element\UiComponentFactory;
 use Magento\Ui\Component\Listing\Columns\Column;
 
-class Content extends Column {
-
+class Content extends Column
+{
     /**
      * @param ContextInterface $context
      * @param UiComponentFactory $uiComponentFactory
@@ -51,7 +51,7 @@ class Content extends Column {
         $end = preg_quote($end, '/');
         $regex = "/({$start})(.*?)({$end})/";
         $result = preg_replace($regex,$replacement,$str);
-        $secondResult = strip_tags(substr($result,0,1350));
-        return str_replace("#}", "",$secondResult );
+        $secondResult = strip_tags(substr($result,0,450));
+        return str_replace("#}", "",$secondResult . "...." );
     }
 }
