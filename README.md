@@ -1,6 +1,8 @@
 # SebTech - Blog
 
-This Magento 2 plugin adds blogging functionality to your Store. 
+This Magento 2 plugin adds blogging functionality to your Store.  
+[![Latest Stable Version](http://poser.pugx.org/sebtech/magento-blog/v)](https://packagist.org/packages/sebtech/magento-blog) [![Total Downloads](http://poser.pugx.org/sebtech/magento-blog/downloads)](https://packagist.org/packages/sebtech/magento-blog)   
+[![Latest Unstable Version](http://poser.pugx.org/sebtech/magento-blog/v/unstable)](https://packagist.org/packages/sebtech/magento-blog)   [![License](http://poser.pugx.org/sebtech/magento-blog/license)](https://packagist.org/packages/sebtech/magento-blog)
 
 ## Requirements
 
@@ -9,6 +11,7 @@ This Magento 2 plugin adds blogging functionality to your Store.
 
 ## Features
 
+- Still in BETA. Found a bug or need support? Create an issue.
 - Creating, Deleting, Updating of Blogs.
 - Individual Blogs can be enabled/disabled.
 - Full support the Magento Page Builder.
@@ -16,8 +19,11 @@ This Magento 2 plugin adds blogging functionality to your Store.
 
 ## Installation
 
-- No composer support at the moment.
-    - Git clone this project inside you app/code folder under SebTech/Blog
+Run the following commands: 
+1. composer require sebtech/magento-blog
+2. bin/magento module:enable SebTech_Blog -c 
+3. bin/magento setup:upgrade
+4. bin/magento setup:di:compile
 
 # How to use
 See the backend admin:
