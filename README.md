@@ -9,9 +9,9 @@ This Magento 2 plugin adds blogging functionality to your Store.
 
 ## Features
 
-- Creating, Deleting, Updating of blogs.
-- Individual blogs can be enabled/disabled.
-- Supports the Magento Page Builder.
+- Creating, Deleting, Updating of Blogs.
+- Individual Blogs can be enabled/disabled.
+- Full support the Magento Page Builder.
 - Toggle to put link in menu and/or footer-menu.
 
 ## Installation
@@ -22,7 +22,7 @@ This Magento 2 plugin adds blogging functionality to your Store.
 # How to use
 See the backend admin:
 
-![img.png](img.png)  
+![](Readme/img.png)
 
 ## Under configuration:
 
@@ -34,3 +34,8 @@ See the backend admin:
   > Set this value to yes if you want to put a link to the blogs in the main menu.
 
 
+## Screenshots
+
+![](Readme/Page Builder.png)  
+![](Readme/Page Builder 2.png)  
+![](Readme/img_1.png)  
