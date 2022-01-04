@@ -1,0 +1,11 @@
+<?php
+/** @var $block \Magento\Framework\View\Element\Template */
+/** @var $view \SebTech\Blog\ViewModel\BlogPosts */
+$view = $block->getData('blogpost');
+$blogpost = $view->getBlogPost();
+?>
+
+<h1><?= $blogpost->getTitle() ?></h1>
+<small><a href="<?= $view->getReturnUrl() ?>">Go Back</a></small>
+<p><?=  $view->filterContentForFrontend($blogpost->getContent()) ?></p>
+<small><a href="<?= $view->getReturnUrl() ?>">Go Back</a> <?= $blogpost->getAuthor() ?> - <?= $blogpost->getCreatedAt()->format("Y-m-d") ?></small>

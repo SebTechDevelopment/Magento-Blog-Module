@@ -1,14 +1,14 @@
 <?php
 /** @var $block \Magento\Framework\View\Element\Template */
-/** @var $view \SebTech\Blog\ViewModel\BlogPostsIndex */
-$view = $block->getData('blogPostsIndex');
+/** @var $view \SebTech\Blog\ViewModel\BlogPosts */
+$view = $block->getData('blogposts');
 ?>
 
 <?php
 /** @var \SebTech\Blog\Model\BlogPost $blog */
 foreach ($view->getAllBlogs() as $blog) { ?>
     <?php if($blog->getEnabled() === true) { ?>
-    <h1><?= $blog->getTitle() ?></h1>
+    <h1><a href="<?= $view->getBlogUrl($blog->getId()) ?>"><?= $blog->getTitle() ?></a></h1>
     <p><?php echo $view->filterContentForFrontend( $blog->getContent()); ?></p>
     <small><?= $blog->getAuthor() ?> - <?= $blog->getCreatedAt()->format("Y-m-d") ?></small>
     <hr>

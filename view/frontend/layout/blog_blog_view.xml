@@ -2,9 +2,9 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="blog.index" template="SebTech_Blog::main.phtml" ifconfig="blog/settings/enabled">
+            <block name="blog.view" template="SebTech_Blog::view.phtml" ifconfig="blog/settings/enabled">
                 <arguments>
-                    <argument xsi:type="object" name="blogposts">SebTech\Blog\ViewModel\BlogPosts</argument>
+                    <argument xsi:type="object" name="blogpost">SebTech\Blog\ViewModel\BlogPosts</argument>
                 </arguments>
             </block>
         </referenceContainer>
